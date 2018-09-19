@@ -263,6 +263,13 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-optional-chaining" "^7.0.0"
 
+"@babel/plugin-proposal-throw-expressions@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-throw-expressions/-/plugin-proposal-throw-expressions-7.0.0.tgz#fd44563c742c5e0df764b1a41ab86b22dde5a5b7"
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-throw-expressions" "^7.0.0"
+
 "@babel/plugin-proposal-unicode-property-regex@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.0.0.tgz#498b39cd72536cd7c4b26177d030226eba08cd33"
@@ -328,6 +335,12 @@
 "@babel/plugin-syntax-optional-chaining@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-chaining/-/plugin-syntax-optional-chaining-7.0.0.tgz#1e6ecba124310b5d3a8fc1e00d50b1c4c2e05e68"
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-syntax-throw-expressions@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-throw-expressions/-/plugin-syntax-throw-expressions-7.0.0.tgz#c0764da188afd99828ffdf78085c5f3c40bb661e"
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
