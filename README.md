@@ -23,3 +23,7 @@ $ npm install --save-dev @lightscript/babel-preset
 ```
 > `@lightscript/babel-preset` includes `@babel/env` and options can be
 > passed in the `env` key!
+
+## Contributing
+
+Issues: https://github.com/wcjohnson/lightscript/issues
