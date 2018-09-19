@@ -41,6 +41,9 @@ export default declare! (api, opts) ->
   {
     plugins: actualPlugins
     presets: [
-      if opts.env != false: ['@babel/preset-env', opts.env or {}]
+      if opts.env != false: [
+        '@babel/preset-env'
+        if typeof(opts.env) == 'object': opts.env else: {}
+      ]
     ].filter(Boolean)
   }
