@@ -1,5 +1,5 @@
 {
-  "presets": [["@lightscript/preset", {
+  "presets": [["@lightscript", {
     "env": false,
     "disablePlugins": ["@babel/plugin-transform-flow-strip-types"]
   }]]

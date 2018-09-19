@@ -1,11 +1,11 @@
-# @lightscript/preset
+# @lightscript/babel-preset
 
 The best way to get up and running with [LightScript](http://wcjohnson.github.io/lightscript)
 
 ## Usage
 
 ```
-$ npm install --save-dev @lightscript/preset
+$ npm install --save-dev @lightscript/babel-preset
 ```
 
 ```js
@@ -13,7 +13,7 @@ $ npm install --save-dev @lightscript/preset
 {
   "presets": [
     [
-      "@lightscript/preset",
+      "@lightscript",
       {
         "env": { "targets": { "ie": 10 } }
       }
@@ -21,5 +21,5 @@ $ npm install --save-dev @lightscript/preset
   ]
 }
 ```
-> `@lightscript/preset` includes `@babel/env` and options can be
+> `@lightscript/babel-preset` includes `@babel/env` and options can be
 > passed in the `env` key!

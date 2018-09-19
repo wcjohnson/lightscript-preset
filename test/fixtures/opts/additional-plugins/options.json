@@ -1,5 +1,5 @@
 {
-  "presets": [["@lightscript/preset", {
+  "presets": [["@lightscript", {
     "env": false,
     "additionalPlugins": [
       ["@babel/plugin-proposal-function-bind"]

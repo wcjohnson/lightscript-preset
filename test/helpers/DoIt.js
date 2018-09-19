@@ -84,9 +84,9 @@ function runExecCode(code) {
   if (opts.presets) {
     for (let _arr = opts.presets, i = 0, _len = _arr.length; i < _len; i++) {
       const e = _arr[i];
-      if (e === "@lightscript/preset") {
+      if (e === "@lightscript") {
         opts.presets[i] = _lib2.default;
-      } else if (Array.isArray(e) && e[0] === "@lightscript/preset") {
+      } else if (Array.isArray(e) && e[0] === "@lightscript") {
         opts.presets[i][0] = _lib2.default;
       }
     }

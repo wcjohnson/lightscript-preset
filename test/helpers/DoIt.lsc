@@ -58,9 +58,9 @@ runExecCode(code) ->
 fixPresets(opts) ->
   if opts.presets:
     for idx i, elem e in opts.presets:
-      if e == "@lightscript/preset":
+      if e == "@lightscript":
         opts.presets[i] = thisPreset
-      elif Array.isArray(e) and e[0] == "@lightscript/preset":
+      elif Array.isArray(e) and e[0] == "@lightscript":
         opts.presets[i][0] = thisPreset
 
 class CompilerTestOptions extends TestOptions:
