@@ -11,12 +11,13 @@ export default declare! (api, opts) ->
   api.assertVersion(7)
 
   now opts = opts or {}
+  decoratorOpts = opts.decoratorOpts or { legacy: true }
 
   // Compute baseline plugins
   basePlugins = [
     '@babel/plugin-proposal-object-rest-spread'
     '@babel/plugin-proposal-optional-chaining'
-    ['@babel/plugin-proposal-decorators', { legacy: Boolean(opts.legacyDecorators) }]
+    ['@babel/plugin-proposal-decorators', decoratorOpts]
     ['@babel/plugin-proposal-class-properties', { loose: true }]
     '@babel/plugin-transform-react-jsx'
     '@babel/plugin-transform-flow-strip-types'
@@ -33,12 +34,12 @@ export default declare! (api, opts) ->
   delete lscOpts.env
   delete lscOpts.disablePlugins
   delete lscOpts.additionalPlugins
-  delete lscOpts.legacyDecorators
-  actualPlugins.unshift(['@lightscript/transform', lscOpts])
+  delete lscOpts.decoratorOpts
+  actualPlugins.unshift(['module:@lightscript/transform', lscOpts])
 
   // Apply Env preset and finish
   {
-    plugins
+    plugins: actualPlugins
     presets: [
       if opts.env != false: ['@babel/preset-env', opts.env or {}]
     ].filter(Boolean)
