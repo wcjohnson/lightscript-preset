@@ -1,0 +1,1 @@
+let X = class X {};
