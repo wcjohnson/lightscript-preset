@@ -7,7 +7,7 @@ import fs from 'fs'
 import { TestRun, Testable, TestOptions } from './TestRunner'
 import { allTests, TestFilter } from './TestFilter'
 import { transformSync } from '@babel/core'
-import thisPlugin from '../../lib'
+import thisPreset from '../../lib'
 import diff from 'jest-diff'
 
 testContext = vm.createContext({
@@ -55,13 +55,13 @@ runExecCode(code) ->
   src = `(function(exports, require, module, __filename, __dirname, opts) {${code}\n});`
   vm.runInContext(src, testContext)(mod.exports, req, mod, filename, dirname, {})
 
-fixPlugins(opts) ->
-  if opts.plugins:
-    for idx i, elem e in opts.plugins:
-      if e == "@lightscript/transform":
-        opts.plugins[i] = thisPlugin
-      elif Array.isArray(e) and e[0] == "@lightscript/transform":
-        opts.plugins[i][0] = thisPlugin
+fixPresets(opts) ->
+  if opts.presets:
+    for idx i, elem e in opts.presets:
+      if e == "@lightscript/preset":
+        opts.presets[i] = thisPreset
+      elif Array.isArray(e) and e[0] == "@lightscript/preset":
+        opts.presets[i][0] = thisPreset
 
 class CompilerTestOptions extends TestOptions:
   inherits(other): void ->
@@ -92,7 +92,7 @@ class CompilerTestable extends Testable:
 
     options = this.readTestOptions()
     if options: this.options.assign(options)
-    fixPlugins(this.options)
+    fixPresets(this.options)
     //console.log("Test options:", this.title, this.options)
 
     this.actual = this.readLocalArtifact("input", ['.js', '.lsc'])

@@ -36,6 +36,8 @@
     "@babel/preset-env": "^7.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
     "@oigroup/babel-preset-lightscript": "^3.1.1",
     "@oigroup/lightscript-eslint": "^3.1.1",
     "@lightscript/runtime": "^0.1.1",

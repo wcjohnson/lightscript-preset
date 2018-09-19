@@ -80,14 +80,14 @@ function runExecCode(code) {
     return runModuleInTestContext(x, filename);
   };const src = `(function(exports, require, module, __filename, __dirname, opts) {${code}\n});`;
   return _vm2.default.runInContext(src, testContext)(mod.exports, req, mod, filename, dirname, {});
-}function fixPlugins(opts) {
-  if (opts.plugins) {
-    for (let _arr = opts.plugins, i = 0, _len = _arr.length; i < _len; i++) {
+}function fixPresets(opts) {
+  if (opts.presets) {
+    for (let _arr = opts.presets, i = 0, _len = _arr.length; i < _len; i++) {
       const e = _arr[i];
-      if (e === "@lightscript/transform") {
-        opts.plugins[i] = _lib2.default;
-      } else if (Array.isArray(e) && e[0] === "@lightscript/transform") {
-        opts.plugins[i][0] = _lib2.default;
+      if (e === "@lightscript/preset") {
+        opts.presets[i] = _lib2.default;
+      } else if (Array.isArray(e) && e[0] === "@lightscript/preset") {
+        opts.presets[i][0] = _lib2.default;
       }
     }
   }
@@ -122,7 +122,7 @@ let CompilerTestable = class CompilerTestable extends _TestRunner.Testable {
       return;
     }const options = this.readTestOptions();
     if (options) this.options.assign(options);
-    fixPlugins(this.options);
+    fixPresets(this.options);
     //console.log("Test options:", this.title, this.options)
 
     this.actual = this.readLocalArtifact("input", ['.js', '.lsc']);
