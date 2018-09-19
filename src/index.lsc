@@ -1,5 +1,18 @@
 import { declare } from '@babel/helper-plugin-utils'
 
+loadPlugin(name) ->
+  maybePlugin = require(name)
+  if maybePlugin.__esModule:
+    maybePlugin.default
+  else:
+    maybePlugin
+
+resolvePlugin(plugin) ->
+  if Array.isArray(plugin):
+    [loadPlugin(plugin[0]), plugin[1]]
+  else:
+    loadPlugin(plugin)
+
 isExcludedPlugin(plugin, exclusions) ->
   if Array.isArray(plugin):
     exclusions.indexOf(plugin[0]) > -1
@@ -26,8 +39,9 @@ export default declare! (api, opts) ->
 
   // Allow user to exclude/add plugins
   excludedPlugins = opts.disablePlugins or []
-  actualPlugins = basePlugins
+  let actualPlugins = basePlugins
     .filter(x -> not isExcludedPlugin(x, excludedPlugins))
+    .map(x -> resolvePlugin(x))
     .concat(opts.additionalPlugins or [])
 
   // Apply LightScript plugin
@@ -36,7 +50,7 @@ export default declare! (api, opts) ->
   delete lscOpts.disablePlugins
   delete lscOpts.additionalPlugins
   delete lscOpts.decoratorOpts
-  actualPlugins.unshift(['module:@lightscript/transform', lscOpts])
+  actualPlugins.unshift(resolvePlugin(['@lightscript/transform', lscOpts]))
 
   // Apply Env preset and finish
   {
