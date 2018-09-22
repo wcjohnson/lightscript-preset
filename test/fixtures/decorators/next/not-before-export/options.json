@@ -1,0 +1,5 @@
+{
+  "presets": [["@lightscript", {
+    "decoratorOpts": { "decoratorsBeforeExport": false }
+  }]]
+}
