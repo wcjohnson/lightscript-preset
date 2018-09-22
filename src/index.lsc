@@ -1,4 +1,8 @@
 import { declare } from '@babel/helper-plugin-utils'
+import { api } from '@lightscript/transform'
+
+// Expose LightScript API
+export { api }
 
 loadPlugin(name) ->
   maybePlugin = require(name)
