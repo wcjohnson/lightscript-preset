@@ -53,7 +53,6 @@ export default declare! (api, opts) ->
   delete lscOpts.env
   delete lscOpts.disablePlugins
   delete lscOpts.additionalPlugins
-  delete lscOpts.decoratorOpts
   actualPlugins.unshift(resolvePlugin(['@lightscript/transform', lscOpts]))
 
   // Apply Env preset and finish
