@@ -29,7 +29,6 @@
     "@babel/plugin-proposal-optional-chaining": "^7.0.0",
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-transform-flow-strip-types": "^7.0.0",
-    "@babel/plugin-transform-react-jsx": "^7.0.0",
     "@lightscript/transform": "4.0.0-alpha.5"
   },
   "peerDependencies": {
