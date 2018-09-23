@@ -33,9 +33,10 @@ let X = classDecorator(_class = (_class2 = (_temp = _class3 = class X {
 
   render() {
     const x = 5;
-    return React.createElement("div", null, "hello world!", React.createElement(X, {
-      some: "prop"
-    }));
+    return <div>
+      hello world!
+      <X some="prop" />
+    </div>;
   }
 
 }, _class3.propTypes = {
