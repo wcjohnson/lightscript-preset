@@ -32,7 +32,8 @@ export default declare! (api, opts) ->
 
   // Compute baseline plugins
   basePlugins = [
-    '@babel/plugin-proposal-object-rest-spread'
+    '@babel/plugin-transform-destructuring'
+    ['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }]
     '@babel/plugin-proposal-optional-chaining'
     '@babel/plugin-proposal-throw-expressions'
     ['@babel/plugin-proposal-decorators', decoratorOpts]
