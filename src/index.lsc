@@ -66,7 +66,8 @@ export default declare! (api, opts) ->
   delete lscOpts.env
   delete lscOpts.disablePlugins
   delete lscOpts.additionalPlugins
-  actualPlugins.unshift([transform, lscOpts])
+  if not opts._noLscTransform:
+    actualPlugins.unshift([transform, lscOpts])
 
   // Apply Env preset and finish
   {

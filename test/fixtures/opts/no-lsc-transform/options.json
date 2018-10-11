@@ -1,0 +1,7 @@
+{
+  "throws": "Unexpected token (1:5)",
+  "presets": [["@lightscript", {
+    "env": false,
+    "_noLscTransform": true
+  }]]
+}
