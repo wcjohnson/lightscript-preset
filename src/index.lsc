@@ -1,21 +1,34 @@
 import { declare } from '@babel/helper-plugin-utils'
 import transform, { api } from '@lightscript/transform'
 
+import p_destructure from '@babel/plugin-transform-destructuring'
+import p_restSpread from '@babel/plugin-proposal-object-rest-spread'
+import p_optionalChaining from '@babel/plugin-proposal-optional-chaining'
+import p_throwExpressions from '@babel/plugin-proposal-throw-expressions'
+import p_decorators from '@babel/plugin-proposal-decorators'
+import p_classProperties from '@babel/plugin-proposal-class-properties'
+import p_flowStripTypes from '@babel/plugin-transform-flow-strip-types'
+import p_env from '@babel/preset-env'
+
 // Expose LightScript API
 export { transform, api }
 
-loadPlugin(name) ->
-  maybePlugin = require(name)
-  if maybePlugin.__esModule:
-    maybePlugin.default
-  else:
-    maybePlugin
+pluginTable = {
+  '@babel/plugin-transform-destructuring': p_destructure
+  '@babel/plugin-proposal-object-rest-spread': p_restSpread
+  '@babel/plugin-proposal-optional-chaining': p_optionalChaining
+  '@babel/plugin-proposal-throw-expressions': p_throwExpressions
+  '@babel/plugin-proposal-decorators': p_decorators
+  '@babel/plugin-proposal-class-properties': p_classProperties
+  '@babel/plugin-transform-flow-strip-types': p_flowStripTypes
+  '@lightscript/transform': transform
+}
 
 resolvePlugin(plugin) ->
   if Array.isArray(plugin):
-    [loadPlugin(plugin[0]), plugin[1]]
+    [pluginTable[plugin[0]], plugin[1]]
   else:
-    loadPlugin(plugin)
+    pluginTable[plugin]
 
 isExcludedPlugin(plugin, exclusions) ->
   if Array.isArray(plugin):
@@ -53,14 +66,14 @@ export default declare! (api, opts) ->
   delete lscOpts.env
   delete lscOpts.disablePlugins
   delete lscOpts.additionalPlugins
-  actualPlugins.unshift(resolvePlugin(['@lightscript/transform', lscOpts]))
+  actualPlugins.unshift([transform, lscOpts])
 
   // Apply Env preset and finish
   {
     plugins: actualPlugins
     presets: [
       if opts.env != false: [
-        '@babel/preset-env'
+        p_env
         if typeof(opts.env) == 'object': opts.env else: {}
       ]
     ].filter(Boolean)
