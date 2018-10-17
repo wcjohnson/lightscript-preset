@@ -45,13 +45,13 @@ export default declare! (api, opts) ->
 
   // Compute baseline plugins
   basePlugins = [
+    '@babel/plugin-transform-flow-strip-types'
     '@babel/plugin-transform-destructuring'
     ['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }]
     '@babel/plugin-proposal-optional-chaining'
     '@babel/plugin-proposal-throw-expressions'
     ['@babel/plugin-proposal-decorators', decoratorOpts]
     ['@babel/plugin-proposal-class-properties', { loose: true }]
-    '@babel/plugin-transform-flow-strip-types'
   ]
 
   // Allow user to exclude/add plugins
