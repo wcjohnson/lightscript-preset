@@ -1,5 +1,5 @@
 "use strict";
 
 function MyComponent() {
-  return React.createElement("div", null, "Hello world");
+  return /*#__PURE__*/React.createElement("div", null, "Hello world");
 }
