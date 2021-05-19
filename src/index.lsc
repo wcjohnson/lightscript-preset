@@ -1,9 +1,6 @@
 import { declare } from '@babel/helper-plugin-utils'
 import transform, { api } from '@lightscript/transform'
 
-import p_destructure from '@babel/plugin-transform-destructuring'
-import p_restSpread from '@babel/plugin-proposal-object-rest-spread'
-import p_optionalChaining from '@babel/plugin-proposal-optional-chaining'
 import p_throwExpressions from '@babel/plugin-proposal-throw-expressions'
 import p_decorators from '@babel/plugin-proposal-decorators'
 import p_classProperties from '@babel/plugin-proposal-class-properties'
@@ -14,9 +11,6 @@ import p_env from '@babel/preset-env'
 export { transform, api }
 
 pluginTable = {
-  '@babel/plugin-transform-destructuring': p_destructure
-  '@babel/plugin-proposal-object-rest-spread': p_restSpread
-  '@babel/plugin-proposal-optional-chaining': p_optionalChaining
   '@babel/plugin-proposal-throw-expressions': p_throwExpressions
   '@babel/plugin-proposal-decorators': p_decorators
   '@babel/plugin-proposal-class-properties': p_classProperties
@@ -46,9 +40,6 @@ export default declare! (api, opts) ->
   // Compute baseline plugins
   basePlugins = [
     '@babel/plugin-transform-flow-strip-types'
-    '@babel/plugin-transform-destructuring'
-    ['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }]
-    '@babel/plugin-proposal-optional-chaining'
     '@babel/plugin-proposal-throw-expressions'
     ['@babel/plugin-proposal-decorators', decoratorOpts]
     ['@babel/plugin-proposal-class-properties', { loose: true }]
