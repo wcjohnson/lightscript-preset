@@ -4,6 +4,8 @@ import transform, { api } from '@lightscript/transform'
 import p_throwExpressions from '@babel/plugin-proposal-throw-expressions'
 import p_decorators from '@babel/plugin-proposal-decorators'
 import p_classProperties from '@babel/plugin-proposal-class-properties'
+import p_privateMethods from '@babel/plugin-proposal-private-methods'
+import p_restSpread from '@babel/plugin-proposal-object-rest-spread'
 import p_flowStripTypes from '@babel/plugin-transform-flow-strip-types'
 import p_env from '@babel/preset-env'
 
@@ -14,6 +16,8 @@ pluginTable = {
   '@babel/plugin-proposal-throw-expressions': p_throwExpressions
   '@babel/plugin-proposal-decorators': p_decorators
   '@babel/plugin-proposal-class-properties': p_classProperties
+  '@babel/plugin-proposal-private-methods': p_privateMethods
+  '@babel/plugin-proposal-object-rest-spread': p_restSpread
   '@babel/plugin-transform-flow-strip-types': p_flowStripTypes
   '@lightscript/transform': transform
 }
@@ -43,6 +47,8 @@ export default declare! (api, opts) ->
     '@babel/plugin-proposal-throw-expressions'
     ['@babel/plugin-proposal-decorators', decoratorOpts]
     ['@babel/plugin-proposal-class-properties', { loose: true }]
+    ['@babel/plugin-proposal-private-methods', { loose: true }]
+    ['@babel/plugin-proposal-object-rest-spread', { loose: true }]
   ]
 
   // Allow user to exclude/add plugins

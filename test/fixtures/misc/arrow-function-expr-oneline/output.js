@@ -9,9 +9,9 @@
 });
 
 (function () {
-  for (var _i3 = 0, _keys3 = Object.keys(obj), _len3 = _keys3.length; _i3 < _len3; _i3++) {
-    var _k = _keys3[_i3];
-    f(_k);
+  for (var _i = 0, _keys = Object.keys(obj), _len = _keys.length; _i < _len; _i++) {
+    var k = _keys[_i];
+    f(k);
   }
 });
 
@@ -43,9 +43,9 @@ f();
 func();
 
 (function () {
-  for (var _i4 = 0, _keys4 = Object.keys(obj), _len4 = _keys4.length; _i4 < _len4; _i4++) {
-    var _k2 = _keys4[_i4];
-    f(_k2);
+  for (var _i2 = 0, _keys2 = Object.keys(obj), _len2 = _keys2.length; _i2 < _len2; _i2++) {
+    var k = _keys2[_i2];
+    f(k);
   }
 });
 
