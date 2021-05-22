@@ -1190,6 +1190,29 @@
     "@babel/helper-validator-identifier" "^7.14.0"
     to-fast-properties "^2.0.0"
 
+"@lightscript/parser@4.0.0-alpha.35":
+  version "4.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@lightscript/parser/-/parser-4.0.0-alpha.35.tgz#ef1c71f3d82b907ca4b8a590dda72d4fe61d4d7f"
+  integrity sha512-Z5Xjui3kWlkfYsu5Wi3FD9LuRNvj8RIYFcnGqMroc8vipE8oJ2SEL1Vov1vaJ4uKQdG09vgWenrcRr1zVlnQoQ==
+
+"@lightscript/runtime@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@lightscript/runtime/-/runtime-0.1.1.tgz#0b10ace1da6625dbea3a8c709cfe48ea52e11ebb"
+  integrity sha512-u/FQAMuLXtPEy8mLN/Hcuq1Zjf69z5eV1WShXAI0tMl9WwotfmTElB5MpnCUx5c57mj543WCqAeMHDqCElfK3Q==
+  dependencies:
+    core-js "^2.0.0"
+
+"@lightscript/transform@4.0.0-alpha.35":
+  version "4.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@lightscript/transform/-/transform-4.0.0-alpha.35.tgz#a8514a3ac359be2b5f1334d91a54f8d140cd5d94"
+  integrity sha512-+6x8X6Jbtlcw245SxXVR+zY/lZriPqCC7VhrPFU9lGsZf8NZQhLE2Egf0G1NrRTIwKoBLPuog8FHOmMPuJlprA==
+  dependencies:
+    "@babel/types" "^7.14.2"
+    "@lightscript/parser" "4.0.0-alpha.35"
+    "@oigroup/lightscript-runtime" "^0.1.1"
+    ast-loc-utils "^1.1.0"
+    find-babel-config "^1.2.0"
+
 "@oigroup/babel-plugin-lightscript@3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@oigroup/babel-plugin-lightscript/-/babel-plugin-lightscript-3.1.1.tgz#38e1127c6ff66a7ba7a6692f38e4d96de21497d8"
@@ -3245,7 +3268,7 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-find-babel-config@^1.1.0:
+find-babel-config@^1.1.0, find-babel-config@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/find-babel-config/-/find-babel-config-1.2.0.tgz#a9b7b317eb5b9860cda9d54740a8c8337a2283a2"
   integrity sha512-jB2CHJeqy6a820ssiqwrKMeyC6nNdmrcgkKWJWmpoxpE8RKciYJXCcXRq1h2AzCo5I5BJeN2tkGEO3hLTuePRA==
@@ -6531,9 +6554,9 @@ xml-name-validator@^3.0.0:
   integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-  integrity sha1-bRX7qITAhnnA136I53WegR4H+kE=
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 yallist@^2.1.2:
   version "2.1.2"
