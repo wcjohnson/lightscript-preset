@@ -1,6 +1,6 @@
 {
   "name": "@lightscript/babel-preset",
-  "version": "4.0.0-alpha.36",
+  "version": "4.0.0-alpha.37",
   "license": "MIT",
   "description": "Babel 7 preset that transpiles LightScript to a selected Ecmascript target.",
   "main": "lib/index.js",
@@ -29,7 +29,7 @@
     "@babel/plugin-proposal-private-methods": "^7.13.0",
     "@babel/plugin-proposal-throw-expressions": "^7.12.13",
     "@babel/plugin-transform-flow-strip-types": "^7.13.0",
-    "@lightscript/transform": "4.0.0-alpha.36"
+    "@lightscript/transform": "4.0.0-alpha.37"
   },
   "peerDependencies": {
     "@babel/core": "^7.13.0",
