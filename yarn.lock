@@ -1190,6 +1190,30 @@
     "@babel/helper-validator-identifier" "^7.14.0"
     to-fast-properties "^2.0.0"
 
+"@lightscript/parser@4.0.0-alpha.38":
+  version "4.0.0-alpha.38"
+  resolved "https://registry.yarnpkg.com/@lightscript/parser/-/parser-4.0.0-alpha.38.tgz#49ba1c8edd4ac0ed46e721b5e6d1bbf702f8b5ca"
+  integrity sha512-dX0XX6A6uBLpHQhShjgnXm2qllFrlViQfGCtKEH0IjOobTw7fqhvFeetBEPEX/9MxvAhFH71ejHKjh9/vosMeg==
+
+"@lightscript/runtime@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@lightscript/runtime/-/runtime-0.1.1.tgz#0b10ace1da6625dbea3a8c709cfe48ea52e11ebb"
+  integrity sha512-u/FQAMuLXtPEy8mLN/Hcuq1Zjf69z5eV1WShXAI0tMl9WwotfmTElB5MpnCUx5c57mj543WCqAeMHDqCElfK3Q==
+  dependencies:
+    core-js "^2.0.0"
+
+"@lightscript/transform@4.0.0-alpha.38":
+  version "4.0.0-alpha.38"
+  resolved "https://registry.yarnpkg.com/@lightscript/transform/-/transform-4.0.0-alpha.38.tgz#05e736f4cf3445f3ab9802fd26ceff9ca575579d"
+  integrity sha512-w3J0OMB89LtByOtfBF+3vS2AfHLxb8hM+JCstrHbVJxWUubof5D4Uv6riwYkuAvLUfJsQSxIKV72ck7gguSHGQ==
+  dependencies:
+    "@babel/traverse" "^7.14.2"
+    "@babel/types" "^7.14.2"
+    "@lightscript/parser" "4.0.0-alpha.38"
+    "@oigroup/lightscript-runtime" "^0.1.1"
+    ast-loc-utils "^1.1.0"
+    find-babel-config "^1.2.0"
+
 "@oigroup/babel-plugin-lightscript@3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@oigroup/babel-plugin-lightscript/-/babel-plugin-lightscript-3.1.1.tgz#38e1127c6ff66a7ba7a6692f38e4d96de21497d8"
@@ -3245,7 +3269,7 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-find-babel-config@^1.1.0:
+find-babel-config@^1.1.0, find-babel-config@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/find-babel-config/-/find-babel-config-1.2.0.tgz#a9b7b317eb5b9860cda9d54740a8c8337a2283a2"
   integrity sha512-jB2CHJeqy6a820ssiqwrKMeyC6nNdmrcgkKWJWmpoxpE8RKciYJXCcXRq1h2AzCo5I5BJeN2tkGEO3hLTuePRA==
@@ -5349,9 +5373,9 @@ punycode@^2.1.0, punycode@^2.1.1:
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 randomatic@^3.0.0:
   version "3.1.1"
